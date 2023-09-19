@@ -22,5 +22,6 @@ export const getStudies = async () => {
         return studys;
     } catch (error) {
         console.log(error);
+        throw error;
     };
 };

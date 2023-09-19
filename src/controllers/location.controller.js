@@ -1,6 +1,6 @@
 import { getAllLocations } from "../models/Location.model.js"
 
-const getAllLocation = async (req, res) => {
+export const getAllLocation = async (req, res) => {
     try {
         const locations=await  getAllLocations();
         if(!locations) {

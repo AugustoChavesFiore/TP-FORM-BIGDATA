@@ -17,18 +17,18 @@ export const Location= sequelize.define('location',{
     }
 }
 ,{
-    timestamps: true
+    timestamps: false
 });
 
-export const getAllLocations = async (req, res) => {
+export const getAllLocations = async () => {
     try {
         const locations = await Location.findAll();
         if(!locations) {
-            return res.status(404).json({message:'No locations found'});
+           return null;
         }
-        return res.status(200).json(locations);
+        return locations;
     } catch (error) {
         console.log(error);
-        return res.status(500).json({message:'Internal server error'});
+        throw error;
     };
 };

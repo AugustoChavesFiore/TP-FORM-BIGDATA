@@ -1,7 +1,8 @@
 import { Router } from 'express';
-import { getAllLocations } from '../models/Location.model.js';
+import { getAllLocation } from '../controllers/location.controller.js';
+
 const locationsRoutes = Router();
 
-locationsRoutes.get('/all', getAllLocations);
+locationsRoutes.get('/all', getAllLocation );
 
 export { locationsRoutes };

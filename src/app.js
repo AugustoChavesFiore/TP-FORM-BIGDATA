@@ -17,10 +17,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
 
-app.use('/survey',surveyRoutes);
-app.use('/locations',locationsRoutes);
-app.use('/studies',studyRoutes);
-app.use('/gender',genderRoutes);
+app.use('/api/survey',surveyRoutes);
+app.use('/api/locations',locationsRoutes);
+app.use('/api/studies',studyRoutes);
+app.use('/api/gender',genderRoutes);
 
 connectDB();
 relations();
