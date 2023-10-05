@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-09-2023 a las 19:53:42
+-- Tiempo de generación: 05-10-2023 a las 14:43:47
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -513,24 +513,17 @@ CREATE TABLE `surveys` (
   `idGender` int(11) NOT NULL,
   `idStudy` int(11) NOT NULL,
   `age` int(11) NOT NULL,
-  `questionsOne` varchar(255) NOT NULL,
-  `questionTwo` varchar(255) NOT NULL,
-  `questionThree` varchar(255) NOT NULL,
-  `questionFour` varchar(255) NOT NULL,
-  `questionFive` varchar(255) NOT NULL,
-  `questionSix` varchar(255) NOT NULL,
-  `questionSeven` varchar(255) NOT NULL,
-  `questionEight` varchar(255) NOT NULL,
+  `answerOne` varchar(255) NOT NULL,
+  `answerTwo` varchar(255) NOT NULL,
+  `answerThree` varchar(255) NOT NULL,
+  `answerFour` varchar(255) NOT NULL,
+  `answerFive` varchar(255) NOT NULL,
+  `answerSix` varchar(255) NOT NULL,
+  `answerSeven` varchar(255) NOT NULL,
+  `answerEight` varchar(255) NOT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `surveys`
---
-
-INSERT INTO `surveys` (`id`, `idLocation`, `idGender`, `idStudy`, `age`, `questionsOne`, `questionTwo`, `questionThree`, `questionFour`, `questionFive`, `questionSix`, `questionSeven`, `questionEight`, `createdAt`, `updatedAt`) VALUES
-(8, 6, 1, 1, 22, 'aa', 'aa', 'aa', 'aa', 'aa', 'aa', 'aa', 'aa', '2023-09-14 17:50:53', '2023-09-14 17:50:53');
 
 --
 -- Índices para tablas volcadas
@@ -589,7 +582,7 @@ ALTER TABLE `studies`
 -- AUTO_INCREMENT de la tabla `surveys`
 --
 ALTER TABLE `surveys`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas

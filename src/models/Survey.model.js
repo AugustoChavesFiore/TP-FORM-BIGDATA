@@ -26,35 +26,35 @@ export const Survey = sequelize.define('survey', {
         type: DataTypes.INTEGER,
         allowNull: false
     },
-    questionsOne: {
+    answerOne: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    questionTwo: {
+    answerTwo: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    questionThree: {
+    answerThree: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    questionFour: {
+    answerFour: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    questionFive: {
+    answerFive: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    questionSix: {
+    answerSix: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    questionSeven: {
+    answerSeven: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    questionEight: {
+    answerEight: {
         type: DataTypes.STRING,
         allowNull: false
     }
@@ -67,7 +67,7 @@ export const Survey = sequelize.define('survey', {
 export const findAllSurveys = async () => {
     try {
         const surveys = await Survey.findAll({
-            attributes: ['id', 'age', 'questionsOne', 'questionTwo', 'questionThree', 'questionFour', 'questionFive', 'questionSix', 'questionSeven', 'questionEight'],
+            attributes: ['id', 'age', 'answerOne', 'answerTwo', 'answerThree', 'answerFour', 'answerFive', 'answerSix', 'answerSeven', 'answerEight'],
         
         include: [
             {
@@ -109,7 +109,7 @@ export const findSurveyById = async (id) => {
     try {
         const survey = await Survey.findByPk(id,
             {
-                attributes: ['id', 'age', 'questionsOne', 'questionTwo', 'questionThree', 'questionFour', 'questionFive', 'questionSix', 'questionSeven', 'questionEight'],
+                attributes: ['id', 'age', 'answerOne', 'answerTwo', 'answerThree', 'answerFour', 'answerFive', 'answerSix', 'answerSeven', 'answerEight'],
                 include: [
                     {
                         model: Gender,
