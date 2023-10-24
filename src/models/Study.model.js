@@ -11,7 +11,10 @@ export const Study= sequelize.define('study',{
         type: DataTypes.STRING,
         allowNull: false
     }
-})
+},
+    {
+        timestamps: false
+    })
 
 export const getStudies = async () => {
     try {
@@ -25,3 +28,16 @@ export const getStudies = async () => {
         throw error;
     };
 };
+
+export const ChargeStudies = async (studys) => {
+    try {
+        const carga= Study.bulkCreate(studys);
+        if(!carga) {
+            return null;
+        }
+        return carga;
+    } catch (error) {
+        console.log(error);
+        
+    }
+}

@@ -8,6 +8,7 @@ import { surveyRoutes } from './routes/survey.routes.js';
 import { locationsRoutes } from './routes/locations.routes.js';
 import { studyRoutes } from './routes/study.routes.js';
 import { genderRoutes } from './routes/gender.routes.js';
+import { LocationsCharger, StudysCharger, gendersCharger } from './helpers/carga.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -22,8 +23,11 @@ app.use('/api/locations',locationsRoutes);
 app.use('/api/studies',studyRoutes);
 app.use('/api/gender',genderRoutes);
 
-connectDB();
+await connectDB();
 relations();
+await LocationsCharger();
+await StudysCharger();
+await gendersCharger();
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 })

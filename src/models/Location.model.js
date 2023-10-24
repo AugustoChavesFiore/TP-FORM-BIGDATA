@@ -32,3 +32,17 @@ export const getAllLocations = async () => {
         throw error;
     };
 };
+
+export const chargeLocation = async (locations) => {
+    try {
+        const carga= Location.bulkCreate(locations);
+        if(!carga) {
+            return null;
+        }
+        return carga;
+    } catch (error) {
+        console.log(error);
+        
+    }
+    
+}

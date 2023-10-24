@@ -12,7 +12,10 @@ export const Gender = sequelize.define('gender', {
         type: DataTypes.STRING,
         allowNull: false
     }
-});
+},
+    {
+        timestamps: false
+    });
 
 export const getGenders = async () => {
     try {
@@ -21,6 +24,18 @@ export const getGenders = async () => {
             return null;
         }
         return genders;
+    } catch (error) {
+        console.log(error);
+    };
+};
+
+export const ChargeGenders = async (genders) => {
+    try {
+        const carga= Gender.bulkCreate(genders);
+        if(!carga) {
+            return null;
+        }
+        return carga;
     } catch (error) {
         console.log(error);
     };
